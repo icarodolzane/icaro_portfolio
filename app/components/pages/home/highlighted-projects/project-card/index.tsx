@@ -1,5 +1,5 @@
 import Image from "next/image"
-import frontendExampleImage from "../../../../../public/images/front-example.png"
+import frontendExampleImage from "../../../../../../public/images/front-example.png"
 import { TechBadge } from "@/app/components/tech-badge"
 import { HiArrowNarrowRight } from "react-icons/hi"
 import { Link } from "@/app/components/link"
