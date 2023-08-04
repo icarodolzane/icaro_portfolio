@@ -1,3 +1,4 @@
+'use client'
 import Image from "next/image"
 import { TechBadge } from "../../../tech-badge"
 import { Button } from "../../../button"
@@ -20,6 +21,12 @@ const MOCK_CONTACTS=[
 ]
 
 export const HeroSection = () => {
+  const handleContact = () => {
+    const contactSection = document.querySelector("#contact");
+    if(contactSection) {
+      contactSection.scrollIntoView({behavior: "smooth"});
+    }
+  }
   return (
     <section className="w-full lg:h-[755px] bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-end pb-10 sm:pb-32 py-32 lg:pb-[110px]">
       <div className="container flex items-start justify-between flex-col-reverse lg:flex-row">
@@ -37,7 +44,9 @@ export const HeroSection = () => {
             }
           </div>
           <div className="mt-6 lg:mt-10 flex sm:items-center sm:gap-5 flex-col sm:flex-row">
-            <Button className="shadow-button w-max">
+            <Button className="shadow-button w-max"
+              onClick={handleContact}
+            >
               Entre em contato
               <HiArrowNarrowRight size={18}/>
             </Button>
