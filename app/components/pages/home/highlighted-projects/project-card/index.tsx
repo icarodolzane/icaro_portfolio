@@ -3,15 +3,20 @@ import frontendExampleImage from "../../../../../../public/images/front-example.
 import { TechBadge } from "@/app/components/tech-badge"
 import { HiArrowNarrowRight } from "react-icons/hi"
 import { Link } from "@/app/components/link"
-export const ProjectCard = () => {
+import { Project } from "@/app/types/projects"
+
+type ProjectCardProps = {
+  project: Project
+}
+export const ProjectCard = ({project}: ProjectCardProps) => {
   return (
     <div 
       className="flex gap-6 lg:gap-12 flex-col lg:flex-row"
     >
       <div className="w-full h-full">
         <Image
-          src={frontendExampleImage}
-          alt="project-thumbnail"
+          src={project.thumbnail.url}
+          alt={`Thumbnail do projeto ${project.title}`}
           width={420}
           height={304}
           className="w-full h-[200px] sm:h-[300px] lg:w-[420px] lg:min-h-full object-cover rounded-lg"
@@ -25,20 +30,19 @@ export const ProjectCard = () => {
             alt="icon"
             src="/images/icons/project-title-icon.svg"
           />
-          Trybe Futebol Clube
+          {project.title}
         </h3>
         <p className="text-gray-400 my-6">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas adipisci ut minus corrupti a. Tempore non libero qui nam! Voluptas eos quidem soluta iure officiis! Quasi unde, corrupti et earum nihil minus error ducimus at ipsum suscipit impedit quidem, tempora iste, illo sed assumenda quod vel! Fugiat nobis mollitia saepe.
+          {project.shortDescription}
         </p>
         <div className="flex gap-x-2 gap-y-3 flex-wrap mb-8 lg:max-w-[350px]">
-          <TechBadge name="React.js"/>
-          <TechBadge name="Typescript.js"/>
-          <TechBadge name="Express/Node"/>
-          <TechBadge name="MySQL"/>
-          <TechBadge name="Sequelize"/>
-          <TechBadge name="Docker"/>
+          {
+            project.technologies.map((tech) => (
+              <TechBadge key={`${project.title}-tech-${tech.name}`} name={tech.name}/>
+            ))
+          }
         </div>
-        <Link href={'github.com/icarodolzane'}>
+        <Link href={`/projects/${project.slug}`}>
           Ver projeto
           <HiArrowNarrowRight />
         </Link>
