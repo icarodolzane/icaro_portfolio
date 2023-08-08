@@ -20,6 +20,10 @@ export type HomePageInfo = {
     
 }
 
+export type ProjectsPageData = {
+  projects:Project[]
+}
+
 export type HomePageData = {
   page: HomePageInfo
   workExperiences: WorkExperience[]
