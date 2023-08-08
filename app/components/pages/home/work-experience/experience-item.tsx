@@ -1,10 +1,12 @@
+'use client'
 import Image from "next/image";
 import { TechBadge } from "@/app/components/tech-badge";
 import { WorkExperience } from "@/app/types/work-experience";
 import { RichText } from "@/app/components/rich-text";
 import { ptBR } from "date-fns/locale";
 import { differenceInMonths, differenceInYears, format } from "date-fns";
-
+import { motion } from "framer-motion";
+import { fadeUpAnimation, techBadgeAnimation } from "@/app/lib/animations";
 
 type ExperienceItemProps = {
   experience: WorkExperience
@@ -44,7 +46,11 @@ export const ExperienceItem = ({experience}: ExperienceItemProps) => {
       : `${months} mes${months > 1 ? 'es' : ''}`
   
   return (
-    <div className="grid grid-cols-[40px,1fr] gap-4 md:gap-10">
+    <motion.div
+      className="grid grid-cols-[40px,1fr] gap-4 md:gap-10"
+      {...fadeUpAnimation}
+      transition={{duration: 0.5}}
+    >
       <div className="flex flex-col items-center gap-4">
         <div className="rounded-full border border-gray-500 p-0.5">
           <Image 
@@ -71,7 +77,7 @@ export const ExperienceItem = ({experience}: ExperienceItemProps) => {
           <h4 className="text-gray-300">{role}</h4>
           <span className="text-gray-500">
           {
-            endDate ? formattedEndDate : `${formattedStartDate} • Ainda trabalhando há • (${formattedDuration})`
+            endDate ? formattedEndDate : `${formattedStartDate} • Presente • (${formattedDuration})`
           }
           </span>
           <div className="text-gray-400">
@@ -84,10 +90,12 @@ export const ExperienceItem = ({experience}: ExperienceItemProps) => {
             <TechBadge
               name={tech.name}
               key={`experience-${companyName}-tech-${tech.name}`}
+              {...techBadgeAnimation}
+              transition={{duration: 0.2, delay: i * 0.1}}
             />
           ))}
         </div>
       </div>
-    </div>
+    </motion.div>
   )
 }
