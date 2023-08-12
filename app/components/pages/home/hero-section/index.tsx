@@ -9,6 +9,7 @@ import { CMSIcon } from "@/app/components/cms-icon"
 import { motion } from "framer-motion"
 import { techBadgeAnimation } from "@/app/lib/animations"
 
+
 type HomeSectionProps = {
   homeInfo: HomePageInfo
 }
@@ -20,9 +21,18 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
       contactSection.scrollIntoView({behavior: "smooth"});
     }
   }
+
+  const DowloadResume = () => {
+    const resumeFilePath = '/Icaro-Dolzane-pt-br.pdf';
+    const downloadLink = document.createElement('a');
+    downloadLink.href = resumeFilePath;
+    downloadLink.download = 'Icaro-Dolzane-ptbr.pdf'; 
+    downloadLink.click();
+  }
+
   return (
     <section className="w-full lg:h-[755px] bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-end pb-10 sm:pb-32 py-32 lg:pb-[110px]">
-      <div className="container flex items-start justify-between flex-col-reverse lg:flex-row">
+      <div className="container flex items-start justify-between flex-col-reverse lg:flex-row ">
         <motion.div
           className="w-full lg:max-w-[530px]"
           initial={{opacity: 0, x: -100}}
@@ -49,12 +59,21 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
             }
           </div>
           <div className="mt-6 lg:mt-10 flex sm:items-center sm:gap-5 flex-col sm:flex-row">
+           
             <Button className="shadow-button w-max"
               onClick={handleContact}
             >
               Entre em contato
               <HiArrowNarrowRight size={18}/>
             </Button>
+           <div>
+            <Button className="shadow-button w-max max-w-[560px]  mt-[1rem] sm:mt-0 "
+              onClick={DowloadResume}
+            >
+              Baixar Currículo
+             
+            </Button>
+          </div>
             <div className="text-2xl text-gray-600 flex items-center h-20 gap-3">
               {
                 homeInfo.socials.map((contact) => (
