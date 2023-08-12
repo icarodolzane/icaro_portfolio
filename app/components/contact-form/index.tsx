@@ -11,6 +11,9 @@ import axios from 'axios'
 import { toast } from 'react-hot-toast'
 import { fadeUpAnimation } from '@/app/lib/animations'
 
+
+
+
 const contactFormSchema = z.object({
   name: z.string().min(3).max(100),
   email: z.string().email(),

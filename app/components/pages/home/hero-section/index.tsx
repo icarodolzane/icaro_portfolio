@@ -60,19 +60,23 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
           </div>
           <div className="mt-6 lg:mt-10 flex sm:items-center sm:gap-5 flex-col sm:flex-row">
            
-            <Button className="shadow-button w-max"
-              onClick={handleContact}
-            >
-              Entre em contato
-              <HiArrowNarrowRight size={18}/>
-            </Button>
-           <div>
-            <Button className="shadow-button w-max max-w-[560px]  mt-[1rem] sm:mt-0 "
+            
+            <Button className="shadow-button w-max  "
               onClick={DowloadResume}
             >
               Baixar Currículo
              
             </Button>
+           <div>
+
+
+            <Button className="shadow-button w-max max-w-[560px]  mt-[1rem] sm:mt-0"
+              onClick={handleContact}
+            >
+              Entre em contato
+              <HiArrowNarrowRight size={18}/>
+            </Button>
+
           </div>
             <div className="text-2xl text-gray-600 flex items-center h-20 gap-3">
               {
