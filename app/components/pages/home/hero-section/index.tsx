@@ -22,7 +22,7 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
     }
   }
 
-  const DowloadResume = () => {
+  const DowloadResume = ():void => {
     const resumeFilePath = '/Icaro-Dolzane-pt-br.pdf';
     const downloadLink = document.createElement('a');
     downloadLink.href = resumeFilePath;
