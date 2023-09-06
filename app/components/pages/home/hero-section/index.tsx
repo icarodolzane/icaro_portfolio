@@ -9,6 +9,7 @@ import { CMSIcon } from "@/app/components/cms-icon"
 import { motion } from "framer-motion"
 import { techBadgeAnimation } from "@/app/lib/animations"
 import ProfilePic from "@/public/images/profile-pic.png";
+import MainLogo from "@/public/images/icons/Logo.png";
 
 
 type HomeSectionProps = {
@@ -32,8 +33,8 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
   }
 
   return (
-    <section id="profile" className="w-full lg:h-[755px] bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-end pb-10 sm:pb-32 py-32 lg:pb-[110px]">
-      <div className="container flex items-start justify-between flex-col-reverse lg:flex-row ">
+    <section id="profile" className="w-full  mt-1 lg:h-[755px]  flex flex-col justify-end pb-10 sm:pb-32 py-32 lg:pb-[110px]">
+      <div className="container  flex items-start justify-between flex-col-reverse lg:flex-row ">
         <motion.div
           className="w-full lg:max-w-[530px]"
           initial={{opacity: 0, x: -100}}
@@ -41,12 +42,18 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
           exit={{opacity: 0, x: -100}}
           transition={{duration: 0.5}}
         >
-          <p className="font-mono text-emerald-400">Olá, meu nome é</p>
-          <h2 className="text-4xl font-bold text-white mt-2">Icaro Dolzane</h2>
-          <div className="text-gray-400 my-6 text-sm sm: text-base">
+        
+          <div className="text-gray-900 border border-black flex flex-col items-center justify-center di my-6 text-sm sm: text-base">
+          <Image
+           width={340} 
+           height={280} 
+            src={MainLogo}
+            alt="Icaro Dolzane"
+            className=" rounded-lg mb-6 lg:mb-0 shadow-2xl  "
+       />
               <RichText content={homeInfo.introduction.raw} />
           </div>
-          <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
+          {/* <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
             {
               homeInfo.technologies.map((tech, i) => (
                 <TechBadge
@@ -58,7 +65,7 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
                 />
               ))
             }
-          </div>
+          </div> */}
           <div className="mt-6 lg:mt-10 flex sm:items-center sm:gap-5 flex-col sm:flex-row">
            
             
@@ -85,7 +92,7 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
                   <a
                     href={contact.url}
                     target="_blank"
-                    className="hover:text-gray-100 transition-colors"
+                    className="hover:text-gray-900 transition-colors"
                   >
                     <CMSIcon icon={contact.iconSvg}/>
                   </a>
@@ -107,7 +114,7 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
          
           src={ProfilePic}
           alt="Icaro Dolzane"
-          className="  rounded-lg mb-6 lg:mb-0 shadow-2xl object-cover"
+          className=" mt-20 rounded-lg mb-6 lg:mb-0 shadow-2xl object-cover"
         />
         </motion.div>
       </div>

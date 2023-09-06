@@ -7,7 +7,7 @@ export const RichText = ({ ...props}: RichTextProps) => {
     <CMSRichText {...props}
       renderers={{
         bold: ({children}) => (
-          <b className="text-gray-50 font-medium" >{children}</b>
+          <b className="text-black" >{children}</b>
         ),
         ul: ({children}) => (
           <ul className="list-disc list-inside pl-2 flex-col gap-1">{children}</ul>
