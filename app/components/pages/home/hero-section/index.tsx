@@ -26,7 +26,7 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
     }
   }
 
-  console.log(homeInfo)
+  console.log(homeInfo.socials[0].url)
 
   const DowloadResume = ():void => {
     const resumeFilePath = '/Icaro-Dolzane-pt-br.pdf';
@@ -53,7 +53,7 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
            height={280} 
             src={MainLogo}
             alt="Icaro Dolzane"
-            className=" rounded-lg mb-6 lg:mb-0"
+            className=" rounded-lg mb-6 lg:mb-0 sm:mt-1"
        />
               <RichText content={homeInfo.introduction.raw} />
           </div>
@@ -69,11 +69,11 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
                 />
               ))
             }
-          </div> */}
-          <div className="mt-6 lg:mt-10 flex sm:items-center sm:gap-5 flex-col sm:flex-row">
+          </div> */}<div className="flex items-center justify-center h-30 ">
+          <div className=" flex sm:items-center sm:gap-2 flex-col sm:flex-row  ">
            
             
-            <Button className="shadow-button w-max  "
+            <Button className=" w-max  "
               onClick={DowloadResume}
             >
               Baixar Currículo
@@ -90,8 +90,9 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
             </Button> */}
 
           </div>
-            <div className="text-2xl text-gray-600 flex items-center h-20 gap-3">
-              {
+          
+            <div className="text-2xl text-gray-600 flex items-center justify-center mt-3 sm:mt-0  gap-3 ">
+              {/* {
                 homeInfo.socials.map((contact) => (
                   <a
                     href={contact.url}
@@ -100,18 +101,23 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
                   >
                     
                     
-                    {/* <CMSIcon icon={contact.iconSvg}/> */}
+                    <CMSIcon icon={contact.iconSvg}/>
                   </a>
                 ))
-              }
-              <a>
-              <Image src={linkedin} alt="linkedin"  width={30} />
-              </a>
+              } */}
+                  <a href={homeInfo.socials[1].url}
+          target="_blank"
+          className="hover:text-blue-500 transition-colors">
+          <Image src={linkedin} alt="linkedin" width={30} />
+        </a>
 
-              <a>
-              <Image src={github} alt="github"  width={30} />
-                </a>
+        <a href={homeInfo.socials[0].url}
+          target="_blank"
+          className="hover:text-green-500 transition-colors">
+          <Image src={github} alt="github" width={30} />
+        </a>
               
+            </div>
             </div>
           </div>
         </motion.div>
