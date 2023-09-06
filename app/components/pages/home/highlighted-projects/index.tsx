@@ -10,8 +10,8 @@ type HighlightedProjectsProps = {
 }
 export const HighlightedProjects = ({projects}: HighlightedProjectsProps) => {
   return (
-    <section className="container py-16">
-      <SectionTitle title="Projetos em destaque" subtitle="destaques"/> 
+    <section id="emphasis" className="container py-16">
+      <SectionTitle title="Projetos em destaque" subtitle="destaques" /> 
       <HorizontalDivider className="mb-16"/>
       <div>
         {projects?.map((project) => (

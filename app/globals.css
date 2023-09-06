@@ -25,3 +25,38 @@
   background-color: #10b981;
   border-radius: 14px;
 }
+
+#profile{
+
+};
+
+#skills{
+  
+};
+
+#emphasis{
+
+};
+
+#experience{
+
+};
+
+
+#contact{
+
+};
+
+
+
+@media (max-width: 640px) {
+  .small-screen-font {
+    font-size: 9px;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .medium-screen-font {
+    font-size: 16px;
+  }
+}

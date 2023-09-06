@@ -30,6 +30,7 @@ export const ProjectDetails = ({project}: ProjectDetailsProps) => {
         transition={{duration: 0.5}}
       />
       <SectionTitle
+      
         title={project.title}
         subtitle="projetos"
         className="text-center items-center sm:[&>h3]:text-4xl"

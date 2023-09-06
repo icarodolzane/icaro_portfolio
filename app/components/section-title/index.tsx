@@ -33,6 +33,8 @@ export const SectionTitle = ({ title, subtitle, className }: SectionTitleProps) 
       >
         {`../${subtitle}`}
       </motion.span>
+
+      
       <motion.h3
         className="text-3xl font-medium"
         {...animProps}
