@@ -10,6 +10,8 @@ import { motion } from "framer-motion"
 import { techBadgeAnimation } from "@/app/lib/animations"
 import ProfilePic from "@/public/images/profile-pic.png";
 import MainLogo from "@/public/images/icons/Logo.png";
+import linkedin from "@/public/images/icons/linkedin-icon.svg";
+import github from "@/public/images/icons/github-icon.svg";
 
 
 type HomeSectionProps = {
@@ -23,6 +25,8 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
       contactSection.scrollIntoView({behavior: "smooth"});
     }
   }
+
+  console.log(homeInfo)
 
   const DowloadResume = ():void => {
     const resumeFilePath = '/Icaro-Dolzane-pt-br.pdf';
@@ -43,13 +47,13 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
           transition={{duration: 0.5}}
         >
         
-          <div className="text-gray-900 border border-black flex flex-col items-center justify-center di my-6 text-sm sm: text-base">
+          <div className="text-gray-900 flex flex-col items-center justify-center di my-6 text-sm sm: text-base">
           <Image
            width={340} 
            height={280} 
             src={MainLogo}
             alt="Icaro Dolzane"
-            className=" rounded-lg mb-6 lg:mb-0 shadow-2xl  "
+            className=" rounded-lg mb-6 lg:mb-0"
        />
               <RichText content={homeInfo.introduction.raw} />
           </div>
@@ -78,12 +82,12 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
            <div>
 
 
-            <Button className="shadow-button w-max max-w-[560px]  mt-[1rem] sm:mt-0"
+            {/* <Button className="shadow-button w-max max-w-[560px]  mt-[1rem] sm:mt-0"
               onClick={handleContact}
             >
               Entre em contato
               <HiArrowNarrowRight size={18}/>
-            </Button>
+            </Button> */}
 
           </div>
             <div className="text-2xl text-gray-600 flex items-center h-20 gap-3">
@@ -94,10 +98,20 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
                     target="_blank"
                     className="hover:text-gray-900 transition-colors"
                   >
-                    <CMSIcon icon={contact.iconSvg}/>
+                    
+                    
+                    {/* <CMSIcon icon={contact.iconSvg}/> */}
                   </a>
                 ))
               }
+              <a>
+              <Image src={linkedin} alt="linkedin"  width={30} />
+              </a>
+
+              <a>
+              <Image src={github} alt="github"  width={30} />
+                </a>
+              
             </div>
           </div>
         </motion.div>
@@ -114,7 +128,7 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
          
           src={ProfilePic}
           alt="Icaro Dolzane"
-          className=" mt-20 rounded-lg mb-6 lg:mb-0 shadow-2xl object-cover"
+          className=" mt-20 rounded-lg mb-6 lg:mb-0 object-cover"
         />
         </motion.div>
       </div>
