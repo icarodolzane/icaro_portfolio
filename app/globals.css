@@ -48,10 +48,32 @@
 };
 
 
+@media screen and (max-width: 280px) {
+ 
+}
+
+@media screen and (max-width: 320px) {
+  .small-font-fold {
+ 
+    font-size: 4px; 
+  }
+
+
+  .small-font-margin {
+  
+    margin-left: -1.5rem; /* Adjust the margin as needed for Galaxy Fold */
+  }
+}
+
+
 
 @media (max-width: 640px) {
   .small-screen-font {
     font-size: 9px;
+  }
+
+   .hide-image {
+    display: none;
   }
 }
 
