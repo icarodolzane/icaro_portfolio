@@ -8,6 +8,7 @@ import { RichText } from "@/app/components/rich-text"
 import { CMSIcon } from "@/app/components/cms-icon"
 import { motion } from "framer-motion"
 import { techBadgeAnimation } from "@/app/lib/animations"
+import ProfilePic from "@/public/images/profile-pic.png";
 
 
 type HomeSectionProps = {
@@ -102,11 +103,11 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
 
         >
         <Image
-          width={320}
-          height={480}
-          src={homeInfo.profilePicture.url}
+         
+         
+          src={ProfilePic}
           alt="Icaro Dolzane"
-          className="w-[300px] h-[380px] lg:w-[340px] lg:h-[480px]   rounded-lg mb-6 lg:mb-0 shadow-2xl object-cover"
+          className="  rounded-lg mb-6 lg:mb-0 shadow-2xl object-cover"
         />
         </motion.div>
       </div>
