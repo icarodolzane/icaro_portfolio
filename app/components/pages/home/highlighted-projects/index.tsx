@@ -10,26 +10,44 @@ type HighlightedProjectsProps = {
 }
 export const HighlightedProjects = ({projects}: HighlightedProjectsProps) => {
   return (
-    <section id="emphasis" className="container py-16">
-      <SectionTitle title="Projetos em destaque" subtitle="destaques" /> 
-      <HorizontalDivider className="mb-16"/>
-      <div>
-        {projects?.map((project) => (
-          <div key={project.slug}>
-            <ProjectCard project={project}/>
-            <HorizontalDivider/>
-          </div>
-        ))}
-        <p
-          className="flex items-center gap-1.5"
-        >
-          <span className="text-gray-400">Tem interesse?</span>
-          <Link className="inline-flex" href={'/projects'}>
-            Ver todos...
-            <HiArrowNarrowRight/>
-          </Link>
+    <><HorizontalDivider  />
+    <div className="border   flex flex-row justify-center items-center">
+      <section id="emphasis" className="  py-16 w-[80rem] h-[50rem] flex flex-col  items-center  ">
+        <SectionTitle title="Projetos em destaque" subtitle="destaques " className="ml-3   sm:ml-3" />
+        
+        <div className=" pt-20 sm:pt-32 px-2">
+          {projects?.map((project) => (
+            <div key={project.slug}>
+              <ProjectCard project={project} />
+
+
+            </div>
+          ))}
+
+
+        </div>
+
+      </section>
+
+
+      <div style={{ 
+         borderTopLeftRadius: '2rem',
+        borderBottomLeftRadius: '2rem'
+        }}
+         className="border pl-3 ml-2 rounded-tl-lg rounded-bl-lg bg-[#7E41CA] h-72 sm:h-52  w-full sm:mt-[-1rem] flex  items-center justify-start">
+        <div className="flex justify-center items-start flex-col ">
+          
+          <Link  href={'/projects'} className="mb-2  ">
+          Ver Projetos...
+          <HiArrowNarrowRight />
+        </Link>
+        <p className="font-montserrat text-xs sm:text-sm font-normal font-light tracking-tighter text-white">
+          Tenha uma visão de alguns dos meus projetos em diversas fases, algums já finalizados e outros em progresso. Sinta-se à vontade para explorar!
         </p>
-      </div>   
-    </section>
+        </div>
+
+      </div>
+
+    </div><HorizontalDivider /></>
   )
 }
