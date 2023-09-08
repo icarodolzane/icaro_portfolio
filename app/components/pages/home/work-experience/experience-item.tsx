@@ -70,21 +70,21 @@ export const ExperienceItem = ({experience}: ExperienceItemProps) => {
         <div className="flex flex-col gap-2 text-sm sm:text-base ">
           <a href={companyUrl}
           target="_blank"
-            className="text-black hove:bg-purple-700 transition-colors"
+            className="text-gray-900 hove:bg-purple-700 transition-colors"
           >
             {companyName}
           </a>
-          <h4 className="text-gray-900">{role}</h4>
-          <span className="text-gray-900">
+          <h4 className="text-gray-600">{role}</h4>
+          <span className="text-gray-600">
           {
             endDate ? formattedEndDate : `${formattedStartDate} • Presente • (${formattedDuration})`
           }
           </span>
-          <div className="text-gray-900">
+          <div className="text-gray-600">
             <RichText content={description.raw}/>
           </div>
         </div>
-        <p className="text-black text-sm mb-3 mt-6 font-semibold">Competências</p>
+        <p className="text-gray-600 text-sm mb-3 mt-6 font-semibold">Competências</p>
         <div className="flex gap-x-2 gap-y-3 flex-wrap lg:max-w-[350px] mb-8">
         {technologies.map((tech, i) => (
             <TechBadge

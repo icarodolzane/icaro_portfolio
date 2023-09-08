@@ -14,7 +14,7 @@ export const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
   return (
     <>
       <HorizontalDivider />
-      <div className="border   flex flex-row justify-center items-center">
+      <div className="flex flex-row justify-center items-center">
         <section
           id="emphasis"
           className="  py-16 w-[80rem] h-[50rem] flex flex-col  items-center  "
@@ -35,14 +35,18 @@ export const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
         </section>
 
         <motion.div
+            
+            style={{ borderTopLeftRadius: "2rem",
+            borderBottomLeftRadius: "2rem"}}
+         
           initial={{ opacity: 0, y: 100 }}
           whileInView={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 100 }}
           transition={{ duration: 0.5 }}
-          className="border pl-3 ml-2 rounded-tl-lg rounded-bl-lg bg-[#7E41CA] h-72 sm:h-52 w-full sm:mt-[-1rem] flex items-center justify-start"
+          className="border pl-3 ml-3 rounded-tl-lg rounded-bl-lg bg-[#7E41CA] h-72 sm:h-52 w-full sm:mt-[-1rem] flex items-center justify-start"
         >
           <div className="flex justify-center items-start flex-col">
-            <Link href={"/projects"} className="mb-2">
+            <Link href={"/projects"} className="mb-3">
               Ver Projetos...
               <HiArrowNarrowRight />
             </Link>
