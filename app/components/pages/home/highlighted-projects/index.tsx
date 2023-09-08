@@ -1,9 +1,11 @@
+"use client"
 import { HiArrowNarrowRight } from "react-icons/hi"
 import { HorizontalDivider } from "@/app/components/divider/horizontal" 
 import { Link } from "@/app/components/link"
 import { SectionTitle } from "@/app/components/section-title"
 import { ProjectCard } from "./project-card"
 import { Project } from "@/app/types/projects"
+import { motion } from 'framer-motion';
 
 type HighlightedProjectsProps = {
   projects: Project[]
@@ -30,24 +32,27 @@ export const HighlightedProjects = ({projects}: HighlightedProjectsProps) => {
       </section>
 
 
-      <div style={{ 
-         borderTopLeftRadius: '2rem',
-        borderBottomLeftRadius: '2rem'
-        }}
-         className="border pl-3 ml-2 rounded-tl-lg rounded-bl-lg bg-[#7E41CA] h-72 sm:h-52  w-full sm:mt-[-1rem] flex  items-center justify-start">
-        <div className="flex justify-center items-start flex-col ">
-          
-          <Link  href={'/projects'} className="mb-2  ">
-          Ver Projetos...
-          <HiArrowNarrowRight />
-        </Link>
-        <p className="font-montserrat text-xs sm:text-sm font-normal font-light tracking-tighter text-white">
-          Tenha uma visão de alguns dos meus projetos em diversas fases, algums já finalizados e outros em progresso. Sinta-se à vontade para explorar!
-        </p>
-        </div>
-
-      </div>
+      <motion.div
+  initial={{ opacity: 0, x: 100 }}
+  whileInView={{ opacity: 1, x: 0 }}
+  exit={{ opacity: 0, x: 100 }}
+  transition={{ duration: 0.5 }}  
+  className="border pl-3 ml-2 rounded-tl-lg rounded-bl-lg bg-[#7E41CA] h-72 sm:h-52 w-full sm:mt-[-1rem] flex items-center justify-start"
+>
+  <div className="flex justify-center items-start flex-col">
+    <Link href={'/projects'} className="mb-2">
+      Ver Projetos...
+      <HiArrowNarrowRight />
+    </Link>
+    <p className="font-montserrat text-xs sm:text-sm font-normal font-light tracking-tighter text-white">
+      Tenha uma visão de alguns dos meus projetos em diversas fases, alguns já finalizados e outros em progresso. Sinta-se à vontade para explorar!
+    </p>
+  </div>
+</motion.div>
 
     </div><HorizontalDivider /></>
   )
 }
+
+
+
