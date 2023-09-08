@@ -43,48 +43,24 @@ export const ContactForm = () => {
   }
 
   return (
-    <section
-      className="py-16 px-6 md:py-32 flex items-center justify-center bg-gray-950"
-      id="contact"
-    >
-      <div className="w-full max-w-[420px] mx-auto">
-        <SectionTitle
-          subtitle="contato"
-          title="Vamos trabalhar juntos? Entre em contato"
-          className="items-center text-center"
-        />
-        <motion.form
-          className="mt-12 w-full flex flex-col gap-4"
-          onSubmit={handleSubmit(onSubmit)}
-          {...fadeUpAnimation}
-        >
-          <input
-            placeholder="Nome"
-            className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
-            {...register('name')}
-          />
-          <input
-            placeholder="E-mail"
-            type="email"
-            className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
-            {...register('email')}
-          />
-          <textarea
-            placeholder="Mensagem"
-            className="resize-none w-full h-[138px] bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
-            {...register('message')}
-            maxLength={500}
-          />
+<section className="px-3 justify-center md:px-12 py-4 md:py-12 flex flex-col md:flex-row items-center  bg-[#7E41CA]" id="contact">
+  <div className=" flex flex-col md:flex-row  w-full md:w-2/3">
+    <div>
+      <h1 className="font-montserrat text-white text-3xl md:text-4xl font-normal leading-6 md:leading-8 tracking-tighter mb-4">
+        Contato
+      </h1>
+      <p className="font-montserrat text-white text-base sm:text-xl font-normal leading-6 md:leading-8 tracking-tight">
+        Vamos trabalhar juntos?<br />
+        Clique no botão ao lado para entrar em contato.
+      </p>
+    </div>
+    <div className="flex justify-center items-center md:w-1/4 mt-2 md:ml-auto">
+  <button className="h-10 w-32 md:w-48 border text-[#7E41CA] rounded-md border-actionable-item bg-white p-2 hover:opacity-40 transition-opacity">
+    Clique aqui!
+  </button>
+    </div>
+  </div>
+</section>
 
-          <div className="relative w-max mx-auto mt-6">
-            <Button className="z-[2] relative" disabled={isSubmitting}>
-              Enviar mensagem
-              <HiArrowNarrowRight size={18} />
-            </Button>
-            <div className="absolute inset-0 bg-emerald-600 blur-2xl opacity-20" />
-          </div>
-        </motion.form>
-      </div>
-    </section>
   )
 }
