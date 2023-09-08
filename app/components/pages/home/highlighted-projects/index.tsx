@@ -43,7 +43,7 @@ export const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
           whileInView={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 100 }}
           transition={{ duration: 0.5 }}
-          className="border pl-3 ml-3 rounded-tl-lg rounded-bl-lg bg-[#7E41CA] h-72 sm:h-52 w-full sm:mt-[-1rem] flex items-center justify-start"
+          className="border pl-2 sm:pl-16 ml-3 rounded-tl-lg rounded-bl-lg bg-[#7E41CA] h-72 sm:h-52 w-full sm:mt-[-1rem] flex items-center justify-start text-center sm:text-left"
         >
           <div className="flex justify-center items-start flex-col">
             <Link href={"/projects"} className="mb-3">

@@ -66,7 +66,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             ))}
           </div>
 
-          <Link href={`/projects/${project.slug}`} className="text-gray-900">
+          <Link href={`/projects/${project.slug}`} className="text-gray-900 mt-[-1rem]">
             Ver projeto
             <HiArrowNarrowRight />
           </Link>
