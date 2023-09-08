@@ -33,10 +33,10 @@ export const HighlightedProjects = ({projects}: HighlightedProjectsProps) => {
 
 
       <motion.div
-  initial={{ opacity: 0, x: 100 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  exit={{ opacity: 0, x: 100 }}
-  transition={{ duration: 0.5 }}  
+ initial={{ opacity: 0, y: 100 }}
+ whileInView={{ opacity: 1, y: 0 }}
+ exit={{ opacity: 0, y: 100 }}
+ transition={{ duration: 0.5 }}
   className="border pl-3 ml-2 rounded-tl-lg rounded-bl-lg bg-[#7E41CA] h-72 sm:h-52 w-full sm:mt-[-1rem] flex items-center justify-start"
 >
   <div className="flex justify-center items-start flex-col">
