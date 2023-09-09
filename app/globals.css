@@ -48,6 +48,15 @@
 };
 
 
+.parallelogram 
+{
+	width: 5rem;
+	height: 10rem;
+	transform: skew(20deg);
+	background: rgb(2, 199, 224);
+}
+
+
 @media screen and (max-width: 280px) {
  
 }
