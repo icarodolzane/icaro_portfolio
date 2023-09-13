@@ -1,46 +1,14 @@
-'use client'
 
-import { z } from 'zod'
-import { SectionTitle } from '../section-title'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { Button } from '../button'
-import { HiArrowNarrowRight } from 'react-icons/hi'
-import { motion } from 'framer-motion'
-import axios from 'axios'
-import { toast } from 'react-hot-toast'
-import { fadeUpAnimation } from '@/app/lib/animations'
+import Link from 'next/link'
 
 
 
 
-const contactFormSchema = z.object({
-  name: z.string().min(3).max(100),
-  email: z.string().email(),
-  message: z.string().min(1).max(500),
-})
 
-type ContactFormData = z.infer<typeof contactFormSchema>
 
 export const ContactForm = () => {
-  const {
-    handleSubmit,
-    register,
-    reset,
-    formState: { isSubmitting },
-  } = useForm<ContactFormData>({
-    resolver: zodResolver(contactFormSchema),
-  })
 
-  const onSubmit = async (data: ContactFormData) => {
-    try {
-      await axios.post('/api/contact', data)
-      toast.success('Mensagem enviada com sucesso!')
-      reset()
-    } catch (error) {
-      toast.error('Ocorreu um erro ao enviar a mensagem. Tente novamente.')
-    }
-  }
+
 
   return (
 <section className="px-3 justify-center md:px-12 py-4 md:py-12 flex flex-col md:flex-row items-center  bg-[#7E41CA]" id="contact">
@@ -55,9 +23,11 @@ export const ContactForm = () => {
       </p>
     </div>
     <div className="  flex justify-center items-center md:w-1/4 mt-2 md:ml-auto">
+      <Link href="/contact">
   <button className="h-10 w-32 md:w-48 border text-[#7E41CA] rounded-md border-actionable-item bg-white p-2 hover:opacity-40 transition-opacity">
     Clique aqui!
   </button>
+  </Link>
     </div>
   </div>
 </section>
