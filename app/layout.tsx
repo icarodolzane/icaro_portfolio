@@ -37,7 +37,6 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         <BackToTop />
         <Header />
         {children}
-        <ContactForm />
         <Toaster />
         <Footer />
       </body>

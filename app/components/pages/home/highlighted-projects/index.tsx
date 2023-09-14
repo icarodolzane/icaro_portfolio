@@ -43,14 +43,14 @@ export const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
           whileInView={{ opacity: 1, y: 0 }}
           exit={{ opacity: 0, y: 100 }}
           transition={{ duration: 0.5 }}
-          className="border pl-2 sm:pl-16 ml-3 rounded-tl-lg rounded-bl-lg bg-[#7E41CA] h-72 sm:h-52 w-full sm:mt-[-1rem] flex items-center justify-start text-center sm:text-left"
+          className="border pl-2 sm:pl-16 ml-3 pr-1 sm:pr-7 rounded-tl-lg rounded-bl-lg bg-[#7E41CA] h-72 sm:h-52  sm:mt-[-1rem] flex items-center justify-start text-center sm:text-left"
         >
           <div className="flex justify-center items-start flex-col">
-            <Link href={"/projects"} className="mb-3">
+            <Link href={"/projects"} className="mb-3 sm:ml-0 ml-4">
               Ver Projetos...
-              <HiArrowNarrowRight />
+              {window.innerWidth > 640 ? <HiArrowNarrowRight /> : null}
             </Link>
-            <p className="font-montserrat text-xs sm:text-sm font-normal font-light tracking-tighter text-white">
+            <p className="font-montserrat projectBar font-normal font-light tracking-tighter text-white">
               Tenha uma visão de alguns dos meus projetos em diversas fases,
               alguns já finalizados e outros em progresso. Sinta-se à vontade
               para explorar!

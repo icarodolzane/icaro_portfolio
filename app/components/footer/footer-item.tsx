@@ -13,7 +13,7 @@ export const FooterItem = ({label, href}: FooterItemProps) => {
   return  (
     <Link href={href}
       className={cn(
-        "text-[#7E41CA] flex items-center small-screen-font text-xs small-font-fold    font-medium font-mono font-montserrat hover:opacity-70 ",
+        "text-[#7E41CA]  flex items-center small-screen-font text-xs small-font-fold    font-normal font-mono font-montserrat hover:opacity-70 ",
         isActive && "text-#aeb9c9",
        
       )}>

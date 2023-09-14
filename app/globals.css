@@ -57,7 +57,13 @@
 }
 
 
-@media screen and (max-width: 280px) {
+
+@media screen and (max-width: 768px) {
+  .hidding {margin-right: 1rem;}
+
+  .projectBar{
+    font-size: 12px
+  }
  
 }
 
@@ -65,6 +71,11 @@
   .small-font-fold {
  
     font-size: 4px; 
+  }
+
+  .hidding{
+    display:none;
+
   }
 
 

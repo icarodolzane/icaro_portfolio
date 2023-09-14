@@ -38,17 +38,18 @@ export const Header = () => {
        style={{ backgroundColor: '#7E41CA' }}
 
     >
-      <div className="container flex items-center justify-start gap-4 sm:gap-1 sm:ml-[5rem] small-font-fold" >
+      <div className="container flex items-center sm:justify-start justify-center gap-4 sm:gap-1 sm:ml-[5rem] small-font-fold" >
         <Link href="/">
-          <Image
+          <Image className="hidding"
             src="/images/Mainlogo.svg"
             alt="icaro-logo"
             width={22.94}
             height={27.33}
           
+          
           />
         </Link>
-        <nav className="flex items-center gap-2   sm:gap-10  sm:ml-[5rem]   max-w-screen-xl  small-font-margin  ">
+        <nav className="flex items-center gap-3  sm:gap-10  sm:ml-[5rem]   max-w-screen-xl  small-font-margin  ">
           {
             NAV_ITEMS.map((item) => (
               <NavItem {...item} key={item.label} />

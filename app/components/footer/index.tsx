@@ -42,7 +42,7 @@ export const Footer = () => {
       
 
       </div>
-      <div className="flex flex-row  w-[90%] h-[20%] gap-10 justify-center ">
+      <div className="flex flex-row mb-4 sm:w-[90%]   w-[30%] h-[25%] sm:gap-10 gap-2 justify-center ">
           {
             NAV_ITEMS.map((item) => (
               <FooterItem {...item} key={item.label} />
@@ -50,13 +50,13 @@ export const Footer = () => {
           }
         </div>
         <div className="border border-gray-400 w-[90%]"></div>
-        <div className="flex gap-3 mt-2 ">
+        <div className="flex gap-3 my-5">
           <Image src={instagram} alt="Instagram" className="w-7" />
           <Image src={github} alt="github" className="w-7"  />
           <Image src={linkedin} alt="linkedin" className="w-7"  />
         </div>
    
-      <span className="flex items-center gap-1.5 text-xs sm:text-sm font-mono text-gray-600 mt-2 ">
+      <span className="flex items-center gap-1.5 text-xs sm:text-sm font-mono text-gray-600 mb-3 ">
         Made with
         <IoMdHeart size={13} className="text-[#7E41CA]" />
         by
