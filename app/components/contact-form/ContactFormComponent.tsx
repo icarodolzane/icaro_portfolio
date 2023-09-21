@@ -49,7 +49,7 @@ export const ContactForm = () => {
           title="Converse comigo e compartilhe suas ideias, perguntas ou projetos emocionantes. Estou pronto para colaborar e tornar suas aspirações realidade!"
           className="items-center text-center text-gray-600"
         /> */}
-       <div className="
+       <motion.div className="
         w-21.25rem
         h-4.5rem
         flex-shrink-0
@@ -63,11 +63,17 @@ export const ContactForm = () => {
         tracking-tighter
         mb-4
         sm:mt-4   
-      ">
+      " 
+       initial={{opacity: 0, scale: 0.3}}
+      animate={{opacity: 1, scale: 1}}
+      transition={{duration: 0.5}}>
         Contato
-      </div>
+      </motion.div>
 
-      <motion.div className="w-1/2 h-1.5 sm:h-2 bg-gradient-to-r from-blue-400 via-blue-500 to-purple-700 my-8 rounded-full" ></motion.div>
+      <motion.div className="w-1/2 h-1.5 sm:h-2 bg-gradient-to-r from-blue-400 via-blue-500 to-purple-700 my-8 rounded-full"   
+      initial={{opacity: 0, scale: 0.3}}
+      animate={{opacity: 1, scale: 1}}
+      transition={{duration: 0.5}} ></motion.div>
 
       <motion.h2 className="text-xl lg:text-1xl text-center sm:text-gray-600 w-[65%]"  
        initial={{opacity: 0, scale: 0.3}}

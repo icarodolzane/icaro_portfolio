@@ -1,11 +1,11 @@
 import { cn } from "@/app/lib/utils"
-
+import { motion } from "framer-motion"
 type HorizontalDividerProps = {
   className?: string
 }
 export const HorizontalDivider = ({className}: HorizontalDividerProps) => {
   return (
-    <div
+    <motion.div
       className={
         cn(
           "w-1/2", 
@@ -16,6 +16,8 @@ export const HorizontalDivider = ({className}: HorizontalDividerProps) => {
           className
         )
       }
-    />
+      initial={{opacity: 0, scale: 0.3}}
+        animate={{opacity: 1, scale: 1}}
+        transition={{duration: 0.5}}/>
   )
 }
