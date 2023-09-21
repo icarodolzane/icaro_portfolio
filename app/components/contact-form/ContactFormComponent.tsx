@@ -67,13 +67,16 @@ export const ContactForm = () => {
         Contato
       </div>
 
-      <div className="w-1/2 h-1.5 sm:h-2 bg-gradient-to-r from-blue-400 via-blue-500 to-purple-700 my-8 rounded-full"></div>
+      <motion.div className="w-1/2 h-1.5 sm:h-2 bg-gradient-to-r from-blue-400 via-blue-500 to-purple-700 my-8 rounded-full" ></motion.div>
 
-      <h2 className="text-xl lg:text-1xl text-center sm:text-gray-600 w-[65%]">
+      <motion.h2 className="text-xl lg:text-1xl text-center sm:text-gray-600 w-[65%]"  
+       initial={{opacity: 0, scale: 0.3}}
+        animate={{opacity: 1, scale: 1}}
+        transition={{duration: 0.5}}>
         Converse comigo e compartilhe suas ideias, perguntas ou projetos
         emocionantes. Estou pronto para colaborar e tornar suas aspirações
         realidade!
-      </h2>
+      </motion.h2>
       <div className="w-full max-w-[420px] mx-auto">
         <motion.form
           className="mt-12 flex flex-col gap-4  "

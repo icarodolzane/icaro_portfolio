@@ -99,7 +99,7 @@ export const ProjectDetails = ({project}: ProjectDetailsProps) => {
         }
       </motion.div>
       </div>
-      <motion.div className="w-[200px] lg:w-[150px] flex justify-center ml-4 sm:min-h-[450px] item-center lg:ml-72 sm:ml-0"  {...fadeUpAnimation}>
+      <motion.div className="w-[200px] lg:w-[150px] sm:mt-0 mt-7 flex justify-center ml-4 sm:min-h-[450px] item-center lg:ml-72 sm:ml-0"  {...fadeUpAnimation}>
   
       <Image
         src={mainIcon}

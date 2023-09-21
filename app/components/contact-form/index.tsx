@@ -11,15 +11,15 @@ export const ContactForm = () => {
           <h1 className="font-montserrat text-white text-3xl md:text-3xl font-normal leading-6 md:leading-8 tracking-tighter sm:mb-4 sm:mt-5">
             Contato
           </h1>
-          <p className="font-montserrat text-white   sm:text-xl font-normal leading-6 md:leading-8 tracking-tight">
+          <p className="font-montserrat text-white sm:text-xl font-normal leading-6 md:leading-8 tracking-tight">
             Vamos trabalhar juntos?
             <br />
             Clique no botão ao lado para entrar em contato.
           </p>
         </div>
-        <div className="  flex justify-center items-center md:w-1/4 mt-2 sm:mt-11 md:ml-auto ">
+        <div className="flex justify-center items-center md:w-1/4 mt-2 sm:mt-11 md:ml-auto">
           <Link href="/contact">
-            <button className="h-10 w-32 md:w-48 border  text-[#7E41CA] rounded-md border-actionable-item bg-white p-2 hover:opacity-40 transition-opacity">
+            <button className="h-10 w-32 md:w-48 border text-[#7E41CA] rounded-md border-actionable-item bg-white p-2 hover:opacity-40 transition-opacity">
               Clique aqui!
             </button>
           </Link>
@@ -28,3 +28,4 @@ export const ContactForm = () => {
     </section>
   );
 };
+

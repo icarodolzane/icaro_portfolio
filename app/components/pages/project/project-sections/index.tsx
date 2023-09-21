@@ -20,7 +20,7 @@ export const ProjectSections = ({sections}: ProjectSectionsProps) => {
             transition={{duration: 0.5 }}
           >
             <h2
-              className="text-2xl md:text-3xl font-medium text-green-300"
+              className="text-2xl md:text-3xl font-medium text-[#7E41CA;]"
             >
               {section.title}
             </h2>

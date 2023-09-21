@@ -5,7 +5,7 @@ import { HiArrowNarrowLeft } from "react-icons/hi"
 import { motion } from "framer-motion"
 export const PageIntroduction = () => {
   return (
-    <section className="w-full h-[450px] lg:h-[630px]  flex flex-col justify-center border border-black">
+    <section className="w-full h-[450px] lg:h-[630px]  flex flex-col justify-center ">
       <SectionTitle
         title="Meus projetos"
         subtitle="projetos"
@@ -18,7 +18,7 @@ export const PageIntroduction = () => {
         exit={{opacity: 0, y: 100}}
         transition={{duration: 0.6}}
       >
-        <p className="text-gray-400 text-center max-w-[640px] my-6 text-sm sm:text-base">Aqui você poderá ver alguns projetos de cunho pessoal, prontos ou em andamento, fique à vontade!
+        <p className="text-gray-600 text-center max-w-[640px] my-6 text-sm sm:text-base">Aqui você poderá ver alguns projetos de cunho pessoal, prontos ou em andamento, fique à vontade!
         </p>
         <Link href="/" >
           <HiArrowNarrowLeft size={20}/>
