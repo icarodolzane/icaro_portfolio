@@ -67,7 +67,7 @@ export const ContactForm = () => {
         Contato
       </div>
 
-      <div className="w-1/4 h-1.5 sm:h-2 bg-gradient-to-r from-blue-400 via-blue-500 to-purple-700 my-8 rounded-full"></div>
+      <div className="w-1/2 h-1.5 sm:h-2 bg-gradient-to-r from-blue-400 via-blue-500 to-purple-700 my-8 rounded-full"></div>
 
       <h2 className="text-xl lg:text-1xl text-center sm:text-gray-600 w-[65%]">
         Converse comigo e compartilhe suas ideias, perguntas ou projetos

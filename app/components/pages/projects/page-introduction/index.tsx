@@ -5,7 +5,7 @@ import { HiArrowNarrowLeft } from "react-icons/hi"
 import { motion } from "framer-motion"
 export const PageIntroduction = () => {
   return (
-    <section className="w-full h-[450px] lg:h-[630px] bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-center">
+    <section className="w-full h-[450px] lg:h-[630px]  flex flex-col justify-center border border-black">
       <SectionTitle
         title="Meus projetos"
         subtitle="projetos"

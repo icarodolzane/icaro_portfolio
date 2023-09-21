@@ -9,6 +9,7 @@ export const ProjectCard = ({project}: ProjectCardProps) => {
   const technologies = project.technologies.map((tech) => tech.name).join(", ");
   return (
     <div className="rounded-lg 'h-[536px]  flex flex-col bg-gray-800 overflow-hidden border-2 border-gray-800 hover:border-[#7E41CA]  opacity-70 hover:opacity-100 transition-all group">
+   
       <div className="w-full  overflow-hidden">
         <Image
           src={project.thumbnail.url}

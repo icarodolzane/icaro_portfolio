@@ -107,13 +107,13 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
     } */}
                 <a href={homeInfo.socials[1].url}
                   target="_blank"
-                  className="hover:text-blue-500 transition-colors">
+                  className="hover:text-[#7E41CA] transition-colors">
                   <Image src={linkedin} alt="linkedin" width={30} />
                 </a>
 
                 <a href={homeInfo.socials[0].url}
                   target="_blank"
-                  className="hover:text-green-500 transition-colors">
+                  className="hover:text-[#7E41CA] transition-colors">
                   <Image src={github} alt="github" width={30} />
                 </a>
 

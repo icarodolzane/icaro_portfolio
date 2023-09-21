@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 
 type SectionTitleProps = {
   title: string;
-  subtitle: string;
+  subtitle?: string;
   className?: string;
 }
 
@@ -31,7 +31,7 @@ export const SectionTitle = ({ title, subtitle, className }: SectionTitleProps) 
         {...animProps}
         transition={{duration: 0.5}}
       >
-        {`../${subtitle}`}
+        {/* {`../${subtitle}`} */}
       </motion.span>
 
       

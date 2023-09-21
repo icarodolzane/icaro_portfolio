@@ -48,7 +48,7 @@ export const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
           <div className="flex justify-center items-start flex-col">
             <Link href={"/projects"} className="mb-3 sm:ml-0 ml-4">
               Ver Projetos...
-              {window.innerWidth > 640 ? <HiArrowNarrowRight /> : null}
+             <HiArrowNarrowRight />
             </Link>
             <p className="font-montserrat projectBar font-normal font-light tracking-tighter text-white">
               Tenha uma visão de alguns dos meus projetos em diversas fases,
