@@ -17,6 +17,9 @@ import context from '@/app/Context/ThemeContext';
 import { useContext } from "react"
 import { ThemeContextType } from "@/app/Context/IContext"
 
+import linkedinWhite from '@/public/images/icons/footer/linkedin.svg';
+import githubWhite from '@/public/images/icons/footer/GitHub.svg'
+
 
 type HomeSectionProps = {
   homeInfo: HomePageInfo
@@ -24,8 +27,9 @@ type HomeSectionProps = {
 
 export const HeroSection = ({homeInfo}: HomeSectionProps) => {
   const { theme, setTheme } = useContext<ThemeContextType>(context);
+  
   const textColorClass = theme ?  "text-white" : "text-gray-900";
-
+  const linkSrc = theme ? linkedinWhite : linkedin;
   const logoSrc = theme ? MainWhiteLogo : MainLogo;
   const handleContact = () => {
     const contactSection = document.querySelector("#contact");
@@ -93,33 +97,16 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
               <div>
 
 
-                {/* <Button className="shadow-button w-max max-w-[560px]  mt-[1rem] sm:mt-0"
-      onClick={handleContact}
-    >
-      Entre em contato
-      <HiArrowNarrowRight size={18}/>
-    </Button> */}
+
 
               </div>
 
               <div className="text-2xl text-gray-600 flex items-center justify-center mt-3 sm:mt-0  gap-3 ">
-                {/* {
-      homeInfo.socials.map((contact) => (
-        <a
-          href={contact.url}
-          target="_blank"
-          className="hover:text-gray-900 transition-colors"
-        >
           
-          
-          <CMSIcon icon={contact.iconSvg}/>
-        </a>
-      ))
-    } */}
                 <a href={homeInfo.socials[1].url}
                   target="_blank"
                   className="hover:text-[#7E41CA] transition-colors">
-                  <Image src={linkedin} alt="linkedin" width={30} />
+                  <Image src={linkSrc} alt="linkedin" width={30} />
                 </a>
 
                 <a href={homeInfo.socials[0].url}

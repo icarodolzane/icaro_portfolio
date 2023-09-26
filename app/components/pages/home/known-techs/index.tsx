@@ -4,6 +4,9 @@ import { KnownTech as IKnownTech } from "@/app/types/projects";
 import { KnownTech } from "./known-tech";
 import { motion } from "framer-motion";
 import { HorizontalDivider } from "@/app/components/divider/horizontal";
+import { useContext } from "react";
+import context from "@/app/Context/ThemeContext";
+import { ThemeContextType } from "@/app/Context/IContext";
 type KnownTechProps = {
   techs: IKnownTech[];
 };
@@ -41,14 +44,17 @@ const techIcons = [
 ];
 
 export const KnownTechs = ({ techs }: KnownTechProps) => {
+  const { theme } = useContext<ThemeContextType>(context);
+  const bgColorClass = theme ? "bg-[#374250]" : "bg-white";
+  const textColorClass = theme ?  "text-white" : "text-gray-900";
   return (
-    <>
-      <section id="skills"  className=" overflow-x-hidden">
+   
+    <section id="skills" className={`overflow-x-hidden ${bgColorClass}`}>
         <HorizontalDivider />
         <SectionTitle
           title="Conhecimentos"
           subtitle="competências"
-          className="ml-6 sm:ml-32"
+          className={`ml-6 sm:ml-32 ${textColorClass}`}
         />
         <div className="w-[95%] ml-3 pl-2 px-3 sm:ml-4 sm:pl-12  grid grid-cols-[repeat(auto-fit,minmax(264px,1fr))] ">
           {techs?.slice(0, 3).map((tech, i) => (
@@ -78,6 +84,6 @@ export const KnownTechs = ({ techs }: KnownTechProps) => {
           ))}
         </div>
       </section>
-    </>
+  
   );
 };
