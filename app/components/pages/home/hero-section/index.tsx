@@ -17,8 +17,8 @@ import context from '@/app/Context/ThemeContext';
 import { useContext } from "react"
 import { ThemeContextType } from "@/app/Context/IContext"
 
-import linkedinWhite from '@/public/images/icons/footer/linkedin.svg';
-import githubWhite from '@/public/images/icons/footer/GitHub.svg'
+import linkedinWhite from '@/public/images/icons/footer/linkedinNew.svg';
+import githubWhite from '@/public/images/icons/footer/GlicHub.svg'
 
 
 type HomeSectionProps = {
@@ -30,6 +30,7 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
   
   const textColorClass = theme ?  "text-white" : "text-gray-900";
   const linkSrc = theme ? linkedinWhite : linkedin;
+  const linkSrc2 = theme ? githubWhite : github;
   const logoSrc = theme ? MainWhiteLogo : MainLogo;
   const handleContact = () => {
     const contactSection = document.querySelector("#contact");
@@ -112,7 +113,7 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
                 <a href={homeInfo.socials[0].url}
                   target="_blank"
                   className="hover:text-[#7E41CA] transition-colors">
-                  <Image src={github} alt="github" width={30} />
+                  <Image src={linkSrc2} alt="github" width={30} />
                 </a>
 
               </div>

@@ -8,7 +8,7 @@ export const HorizontalDivider = ({className}: HorizontalDividerProps) => {
     <motion.div
       className={
         cn(
-          "w-1/2", 
+          "w-1/2 border-none", 
           "h-1.5 sm:h-2", 
           "bg-gradient-to-r from-blue-400 via-blue-500 to-purple-700",
           "my-8 border-b rounded-r-full",

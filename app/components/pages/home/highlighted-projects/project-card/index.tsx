@@ -7,12 +7,21 @@ import { Project } from "@/app/types/projects";
 import { motion } from "framer-motion";
 import { fadeUpAnimation, techBadgeAnimation } from "@/app/lib/animations";
 import retangle from "@/public/images/ret.svg";
+import { useContext } from "react";
+import { ThemeContextType } from "@/app/Context/IContext";
+import context from "@/app/Context/ThemeContext";
 
 type ProjectCardProps = {
   project: Project;
 };
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
+  const { theme } = useContext<ThemeContextType>(context);
+
+  
+  const bgColorClass = theme ? "bg-[#374250]" : "bg-white";
+  const textColorClass = theme ?  "text-white" : "text-gray-900";
+  const borderClass = theme ? "border-[#374250]" : "border-white"
   return (
     <div className="w-full flex flex-col sm:flex-row  ">
       <motion.div
@@ -41,14 +50,14 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           />
 
           <motion.h3
-            className="flex items-center gap-3 font-medium text-lg text-gray-900"
+            className={`flex items-center gap-3 font-medium  ${textColorClass}`}
             {...fadeUpAnimation}
             transition={{ duration: 0.7 }}
           >
             {project.title}
           </motion.h3>
           <motion.p
-            className="text-gray-900 my-6"
+            className={`${textColorClass} my-6`}
             {...fadeUpAnimation}
             transition={{ duration: 0.2, delay: 0.3 }}
           >
@@ -66,7 +75,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             ))}
           </div>
 
-          <Link href={`/projects/${project.slug}`} className="text-gray-900 mt-[-1rem]">
+          <Link href={`/projects/${project.slug}`} className={`${textColorClass} mt-[-1rem]`}>
             Ver projeto
             <HiArrowNarrowRight />
           </Link>

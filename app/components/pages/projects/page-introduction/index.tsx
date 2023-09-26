@@ -3,9 +3,17 @@ import { Link } from "@/app/components/link"
 import { SectionTitle } from "@/app/components/section-title"
 import { HiArrowNarrowLeft } from "react-icons/hi"
 import { motion } from "framer-motion"
+import { ThemeContextType } from "@/app/Context/IContext"
+import context from "@/app/Context/ThemeContext"
+import { useContext } from "react"
 export const PageIntroduction = () => {
+  const { theme } = useContext<ThemeContextType>(context);
+  const bgColorClass = theme ?   "bg-[#374250]" : "bg-white" ; 
+  const textColorClass = theme ?  "text-white" : "text-gray-600" ;
   return (
-    <section className="w-full h-[450px] lg:h-[630px]  flex flex-col justify-center ">
+    <section
+      className={`w-full h-[450px] lg:h-[630px] flex flex-col justify-center ${bgColorClass}`}
+    >
       <SectionTitle
         title="Meus projetos"
         subtitle="projetos"

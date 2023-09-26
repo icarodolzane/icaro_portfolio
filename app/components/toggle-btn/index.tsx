@@ -1,17 +1,24 @@
 "use client";
 import { ThemeContextType } from "@/app/Context/IContext";
 import context from "@/app/Context/ThemeContext";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import { motion } from "framer-motion"
 
 export const ToggleBtn = () => {
   const { theme, setTheme } = useContext<ThemeContextType>(context);
 
-  console.log("here" + theme);
-
   const toggleButton = () => {
-    setTheme(!theme);
+    const newTheme = !theme;
+    setTheme(newTheme);
+    localStorage.setItem("theme", JSON.stringify(newTheme));
   };
+
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme");
+    if (storedTheme) {
+      setTheme(JSON.parse(storedTheme));
+    }
+  }, [setTheme]);
 
   return (
     <motion.div

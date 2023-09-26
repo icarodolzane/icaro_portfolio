@@ -11,17 +11,26 @@ import { RichText } from "@graphcms/rich-text-react-renderer"
 import { motion } from "framer-motion"
 import { fadeUpAnimation, techBadgeAnimation } from "@/app/lib/animations";
 import mainIcon from '@/public/images/icons/Logoss.svg'
+import whiteLogo from "@/public/images/whiteLogo.svg";
 import Image from "next/image";
+import context from "@/app/Context/ThemeContext"
+import { useContext } from "react"
+import { ThemeContextType } from "@/app/Context/IContext"
 
 type ProjectDetailsProps = {
   project: Project
 }
 
 export const ProjectDetails = ({project}: ProjectDetailsProps) => {
+  const { theme } = useContext<ThemeContextType>(context);
+  const bgColorClass = theme ?  "bg-[#374250]" : "bg-white" ;
+  const textColorClass = theme ?  "text-white" : "text-black";
+  const textColorClass2 = theme ?   "text-white" : "text-gray-600";
+  const textColorClass3 = theme ?   " font-bold" : "text-white ";
+  const imgSrc = theme ? whiteLogo : mainIcon;
   return (
     <section
-      className=" w-full sm:min-h-[750px] flex flex-col  items-center relative pb-10 sm:pb-24 py-24 px-6 overflow-hidden"
-    >
+    className={`w-full sm:min-h-[750px] flex flex-col items-center relative pb-10 sm:pb-24 py-24 px-6 overflow-hidden ${bgColorClass}`} >
       
       <motion.div
         className="absolut inset-0 z-[-1]"
@@ -37,7 +46,7 @@ export const ProjectDetails = ({project}: ProjectDetailsProps) => {
       
         title="Projetos"
         subtitle="projetos"
-        className="text-center items-center sm:[&>h3]:text-4xl"
+        className={`text-center items-center sm:[&>h3]:text-4xl ${textColorClass}`}
       />
       <motion.div className="w-1/2 h-1.5 sm:h-2 bg-gradient-to-r from-blue-400 via-blue-500 to-purple-700 my-8 rounded-full" 
        initial={{opacity: 0, scale: 0.3}}
@@ -47,11 +56,13 @@ export const ProjectDetails = ({project}: ProjectDetailsProps) => {
       <div className=" md:mr-10 flex sm:items-start sm:justify-center items-center flex-col md:flex-row">
      <div className="   flex flex-col justify-center items-center w-full sm:w-[240px] lg:w-[600px]">
 
-      <motion.h2 className="text-lg font-bold "   {...fadeUpAnimation}>{project.title}</motion.h2>
+     <motion.h2 className={textColorClass3} {...fadeUpAnimation}>
+      {project.title}
+    </motion.h2>
       <motion.div
-        className="text-gray-600 text- max-w-[640px] my-4 sm:my-16 text-sm sm:text-base "
-        {...fadeUpAnimation}
-      >
+      className={`text-max-w-[640px] my-4 sm:my-16 text-sm sm:text-base ${textColorClass2}`}
+      {...fadeUpAnimation}
+    >
         
         <RichText content={project.description.raw}/>
       </motion.div>
@@ -102,7 +113,7 @@ export const ProjectDetails = ({project}: ProjectDetailsProps) => {
       <motion.div className="w-[200px] lg:w-[150px] sm:mt-0 mt-7 flex justify-center ml-4 sm:min-h-[450px] item-center lg:ml-72 sm:ml-0"  {...fadeUpAnimation}>
   
       <Image
-        src={mainIcon}
+        src={imgSrc}
         alt="icaro-logo"
         width={200.94}
         height={200.33}

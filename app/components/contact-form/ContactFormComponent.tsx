@@ -29,6 +29,7 @@ export const ContactForm = () => {
   
   const bgColorClass = theme ? "bg-[#374250]" : "bg-white";
   const textColorClass = theme ?  "text-white" : "text-black";
+  const textColorClass2 = theme ?  "text-white" : "text-gray-600 ";
   const {
     handleSubmit,
     register,
@@ -86,7 +87,7 @@ export const ContactForm = () => {
       animate={{opacity: 1, scale: 1}}
       transition={{duration: 0.5}} ></motion.div>
 
-      <motion.h2 className="text-xl lg:text-1xl text-center sm:text-gray-600 w-[65%]"  
+      <motion.h2 className={`text-xl lg:text-1xl text-center ${textColorClass2} w-[65%]`}  
        initial={{opacity: 0, scale: 0.3}}
         animate={{opacity: 1, scale: 1}}
         transition={{duration: 0.5}}>

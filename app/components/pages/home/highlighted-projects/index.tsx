@@ -6,15 +6,24 @@ import { SectionTitle } from "@/app/components/section-title";
 import { ProjectCard } from "./project-card";
 import { Project } from "@/app/types/projects";
 import { motion } from "framer-motion";
+import { ThemeContextType } from "@/app/Context/IContext";
+import context from "@/app/Context/ThemeContext";
+import { useContext } from "react";
 
 type HighlightedProjectsProps = {
   projects: Project[];
 };
 export const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
+  const { theme } = useContext<ThemeContextType>(context);
+
+  
+  const bgColorClass = theme ? "bg-[#374250]" : "bg-white";
+  const textColorClass = theme ?  "text-white" : "text-black";
+  const borderClass = theme ? "border-[#374250]" : "border-white"
   return (
-    <>
+    <div className={` ${bgColorClass} border ${borderClass}`}>
       <HorizontalDivider />
-      <div className="flex flex-row justify-center items-center">
+      <div className=" py-16 flex flex-row justify-center items-center">
         <section
           id="emphasis"
           className="  py-16 w-[80rem] h-[50rem] flex flex-col  items-center  "
@@ -22,7 +31,7 @@ export const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
           <SectionTitle
             title="Projetos em destaque"
             subtitle="destaques "
-            className="ml-3   sm:ml-3"
+            className={`ml-3   sm:ml-3 ${textColorClass}`}
           />
 
           <div className=" pt-20 sm:pt-32 px-2">
@@ -59,6 +68,6 @@ export const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
         </motion.div>
       </div>
       <HorizontalDivider />
-    </>
+    </div>
   );
 };

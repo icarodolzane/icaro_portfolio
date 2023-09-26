@@ -1,0 +1,20 @@
+<svg width="44" height="43" viewBox="0 0 44 43" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="LinkedIn" clip-path="url(#clip0_215_149)" filter="url(#filter0_i_215_149)">
+<path id="Vector" d="M22 0C9.845 0 0 9.62125 0 21.5C0 33.3787 9.845 43 22 43C34.155 43 44 33.3787 44 21.5C44 9.62125 34.155 0 22 0ZM16.577 31.0783H12.023V16.7055H16.577V31.0783ZM14.278 14.8243C12.793 14.8243 11.583 13.631 11.583 12.169C11.583 10.707 12.793 9.51375 14.278 9.51375C15.763 9.51375 16.973 10.6962 16.973 12.169C16.973 13.6418 15.763 14.8243 14.278 14.8243ZM33.638 31.0783H29.106V23.5317C29.106 21.4678 28.303 20.3067 26.631 20.3067C24.805 20.3067 23.859 21.5107 23.859 23.5317V31.0783H19.492V16.7055H23.859V18.6405C23.859 18.6405 25.168 16.2648 28.292 16.2648C31.416 16.2648 33.649 18.1245 33.649 21.973V31.0783H33.638Z" fill="white"/>
+</g>
+<defs>
+<filter id="filter0_i_215_149" x="0" y="0" width="44" height="47" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="2"/>
+<feComposite in2="hardAlpha" operator="arithmetic" k2="-1" k3="1"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.25 0"/>
+<feBlend mode="normal" in2="shape" result="effect1_innerShadow_215_149"/>
+</filter>
+<clipPath id="clip0_215_149">
+<rect width="44" height="43" fill="white"/>
+</clipPath>
+</defs>
+</svg>
