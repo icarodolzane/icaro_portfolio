@@ -7,7 +7,7 @@ import { Footer } from './components/footer'
 import { BackToTop } from './components/back-to-top'
 import { Toaster } from './components/toaster'
 import AgentsProvider from "./Context/Provider";
-import { ToggleBtn } from './components/toggle-btn';
+import {ToggleBtn } from './components/toggle-btn';
 
 export const metadata = {
   title: {

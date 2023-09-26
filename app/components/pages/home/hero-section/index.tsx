@@ -10,9 +10,12 @@ import { motion } from "framer-motion"
 import { techBadgeAnimation } from "@/app/lib/animations"
 import ProfilePic from "@/public/images/profile-pic.png";
 import MainLogo from "@/public/images/icons/Logo.png";
+import MainWhiteLogo from "@/public/images/white-main-logo.svg";
 import linkedin from "@/public/images/icons/linkedin-icon.svg";
 import github from "@/public/images/icons/github-icon.svg";
-
+import context from '@/app/Context/ThemeContext';
+import { useContext } from "react"
+import { ThemeContextType } from "@/app/Context/IContext"
 
 
 type HomeSectionProps = {
@@ -20,6 +23,10 @@ type HomeSectionProps = {
 }
 
 export const HeroSection = ({homeInfo}: HomeSectionProps) => {
+  const { theme, setTheme } = useContext<ThemeContextType>(context);
+  const textColorClass = theme ?  "text-white" : "text-gray-900";
+
+  const logoSrc = theme ? MainWhiteLogo : MainLogo;
   const handleContact = () => {
     const contactSection = document.querySelector("#contact");
     if(contactSection) {
@@ -38,7 +45,12 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
   }
 
   return (
-    <section id="profile" className="w-full  lg:h-[755px]  flex flex-col justify-center pb-10 sm:pb-32 py-32 lg:pb-[110px] ">
+    <section
+      id="profile"
+      className={`w-full lg:h-[755px] flex flex-col justify-center pb-10 sm:pb-32 py-32 lg:pb-[110px] ${
+        theme ? 'bg-[#374250]' : 'bg-white'
+      }`}
+    >
       <div className="container  flex items-start justify-between flex-col-reverse lg:flex-row ">
         <motion.div
           className="w-full lg:max-w-[530px]"
@@ -47,12 +59,11 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
           exit={{ opacity: 0, x: -100 }}
           transition={{ duration: 0.5 }}
         >
-
-          <div className="text-gray-900 flex flex-col items-center justify-center di my-6 text-sm sm: text-base">
+    <div className={`flex flex-col items-center justify-center my-6 text-sm sm:text-base ${textColorClass}`}>
             <Image
               width={340}
               height={280}
-              src={MainLogo}
+              src={logoSrc}
               alt="Icaro Dolzane"
               className=" rounded-lg mb-6 lg:mb-0 sm:mt-1" />
             <RichText content={homeInfo.introduction.raw} />

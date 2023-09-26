@@ -19,7 +19,7 @@ console.log("here"+ theme);
   };
 
   return (
-    <div className="mt-16 flex items-end justify-end">
+    <div className={`mt-16 flex items-end justify-end ${theme ? 'bg-[#374250]' : 'bg-white'}`}>
     <label className="relative inline-flex items-center mr-5 cursor-pointer">
       <input
         type="checkbox"
