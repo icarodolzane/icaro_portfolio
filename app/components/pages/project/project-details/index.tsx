@@ -26,7 +26,7 @@ export const ProjectDetails = ({project}: ProjectDetailsProps) => {
   const bgColorClass = theme ?  "bg-[#374250]" : "bg-white" ;
   const textColorClass = theme ?  "text-white" : "text-black";
   const textColorClass2 = theme ?   "text-white" : "text-gray-600";
-  const textColorClass3 = theme ?   " font-bold" : "text-white ";
+  const textColorClass3 = theme ?   "text-white " : " font-bold" ;
   const imgSrc = theme ? whiteLogo : mainIcon;
   return (
     <section
@@ -89,7 +89,7 @@ export const ProjectDetails = ({project}: ProjectDetailsProps) => {
               href={project.githubUrl}
               target="_blank"
             >
-              <Button className="min-w-[180px] hover:shadow-button">
+              <Button className="min-w-[180px] ">
                 <TbBrandGithub size={20}/>
               </Button>
             </a>

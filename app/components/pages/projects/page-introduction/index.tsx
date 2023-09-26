@@ -17,7 +17,7 @@ export const PageIntroduction = () => {
       <SectionTitle
         title="Meus projetos"
         subtitle="projetos"
-        className="text-center items-center [&>h3]:text-4xl"
+        className={`text-center items-center [&>h3]:text-4xl ${textColorClass}`}
       />
       <motion.div
         className="flex flex-col items-center"
@@ -26,7 +26,7 @@ export const PageIntroduction = () => {
         exit={{opacity: 0, y: 100}}
         transition={{duration: 0.6}}
       >
-        <p className="text-gray-600 text-center max-w-[640px] my-6 text-sm sm:text-base">Aqui você poderá ver alguns projetos de cunho pessoal, prontos ou em andamento, fique à vontade!
+        <p className={`${textColorClass} text-center max-w-[640px] my-6 text-sm sm:text-base`}>Aqui você poderá ver alguns projetos de cunho pessoal, prontos ou em andamento, fique à vontade!
         </p>
         <Link href="/" >
           <HiArrowNarrowLeft size={20}/>

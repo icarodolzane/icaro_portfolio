@@ -25,7 +25,7 @@ export const ToggleBtn = () => {
     initial={{ top: -100 }}
     animate={{ top: 0 }}
     transition={{ duration: 0.5 }}
-      className={`mt-12 h-10 flex items-end justify-end ${
+      className={`mt-12 h-10 flex items-end justify-end pb-1 ${
         theme ? "bg-[#374250]" : "bg-white"
       }`}
     >
