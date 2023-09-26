@@ -1,87 +1,31 @@
-'use client'
-
-import { z } from 'zod'
-import { SectionTitle } from '../section-title'
-import { useForm } from 'react-hook-form'
-import { zodResolver } from '@hookform/resolvers/zod'
-import { Button } from '../button'
-import { HiArrowNarrowRight } from 'react-icons/hi'
-import { motion } from 'framer-motion'
-import axios from 'axios'
-import { toast } from 'react-hot-toast'
-import { fadeUpAnimation } from '@/app/lib/animations'
-
-const contactFormSchema = z.object({
-  name: z.string().min(3).max(100),
-  email: z.string().email(),
-  message: z.string().min(1).max(500),
-})
-
-type ContactFormData = z.infer<typeof contactFormSchema>
+import Link from "next/link";
 
 export const ContactForm = () => {
-  const {
-    handleSubmit,
-    register,
-    reset,
-    formState: { isSubmitting },
-  } = useForm<ContactFormData>({
-    resolver: zodResolver(contactFormSchema),
-  })
-
-  const onSubmit = async (data: ContactFormData) => {
-    try {
-      await axios.post('/api/contact', data)
-      toast.success('Mensagem enviada com sucesso!')
-      reset()
-    } catch (error) {
-      toast.error('Ocorreu um erro ao enviar a mensagem. Tente novamente.')
-    }
-  }
-
   return (
     <section
-      className="py-16 px-6 md:py-32 flex items-center justify-center bg-gray-950"
+      className="px-3 justify-center md:px-12 py-4 md:py-12 flex flex-col md:flex-row items-center  bg-[#7E41CA]"
       id="contact"
     >
-      <div className="w-full max-w-[420px] mx-auto">
-        <SectionTitle
-          subtitle="contato"
-          title="Vamos trabalhar juntos? Entre em contato"
-          className="items-center text-center"
-        />
-        <motion.form
-          className="mt-12 w-full flex flex-col gap-4"
-          onSubmit={handleSubmit(onSubmit)}
-          {...fadeUpAnimation}
-        >
-          <input
-            placeholder="Nome"
-            className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
-            {...register('name')}
-          />
-          <input
-            placeholder="E-mail"
-            type="email"
-            className="w-full h-14 bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
-            {...register('email')}
-          />
-          <textarea
-            placeholder="Mensagem"
-            className="resize-none w-full h-[138px] bg-gray-800 rounded-lg placeholder:text-gray-400 text-gray-50 p-4 focus:outline-none focus:ring-2 ring-emerald-600"
-            {...register('message')}
-            maxLength={500}
-          />
-
-          <div className="relative w-max mx-auto mt-6">
-            <Button className="z-[2] relative" disabled={isSubmitting}>
-              Enviar mensagem
-              <HiArrowNarrowRight size={18} />
-            </Button>
-            <div className="absolute inset-0 bg-emerald-600 blur-2xl opacity-20" />
-          </div>
-        </motion.form>
+      <div className=" flex flex-col md:flex-row  w-full md:w-2/3  sm:justify-center sm:items-center ">
+        <div>
+          <h1 className="  w-full flex sm:justify-start justify-center text-white text-3xl md:text-4xl   leading-2 md:leading-8 tracking-tighter sm:mb-4 mb-2 sm:mt-5">
+            Contato
+          </h1>
+          <p className=" text-white flex sm:justify-start justify-center sm:text-left text-center  sm:text-xl font-normal leading-6 md:leading-8 tracking-tight">
+            Vamos trabalhar juntos?
+            <br />
+            Clique no botão ao lado para entrar em contato.
+          </p>
+        </div>
+        <div className="flex justify-center items-center md:w-1/4 mt-2 sm:mt-11 md:ml-auto">
+          <Link href="/contact">
+            <button className="h-10 w-32 md:w-48 border text-[#7E41CA] rounded-md border-actionable-item bg-white p-2 hover:opacity-40 transition-opacity">
+              Clique aqui!
+            </button>
+          </Link>
+        </div>
       </div>
     </section>
-  )
-}
+  );
+};
+

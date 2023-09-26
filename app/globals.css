@@ -4,7 +4,7 @@
 
 @layer base {
   body {
-    @apply bg-gray-900 text-gray-100
+    @apply bg-[#fffff] text-gray-900
   }
 }
 
@@ -17,11 +17,113 @@
 }
 
 *::-webkit-scrollbar-track {
-  background: #374151;
+  background: #ffffff;
   border-radius: 5px;
 }
 
 *::-webkit-scrollbar-thumb {
-  background-color: #10b981;
+  background-color: #7E41CA;
   border-radius: 14px;
+}
+
+#profile{
+
+};
+
+#skills{
+  
+};
+
+#emphasis{
+
+};
+
+#experience{
+
+};
+
+
+#contact{
+
+};
+
+
+.parallelogram 
+{
+	width: 5rem;
+	height: 10rem;
+	transform: skew(20deg);
+	background: rgb(2, 199, 224);
+}
+
+
+
+.bg-custom {
+  background-color: #374250;
+}
+
+.bg-white-custom {
+  background-color: white;
+}
+
+.border-custom {
+  border: 1px solid #374250;
+}
+
+.border-white-custom {
+  border: 1px solid white;
+}
+
+.text-white-custom {
+  color: white;
+}
+
+.text-black-custom {
+  color: black;
+}
+
+
+@media screen and (max-width: 768px) {
+  .hidding {margin-right: 1rem;}
+
+  .projectBar{
+    font-size: 12px
+  }
+ 
+}
+
+@media screen and (max-width: 320px) {
+  .small-font-fold {
+ 
+    font-size: 4px; 
+  }
+
+  .hidding{
+    display:none;
+
+  }
+
+
+  .small-font-margin {
+  
+    margin-left: -1.5rem; /* Adjust the margin as needed for Galaxy Fold */
+  }
+}
+
+
+
+@media (max-width: 640px) {
+  .small-screen-font {
+    font-size: 9px;
+  }
+
+   .hide-image {
+    display: none;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  .medium-screen-font {
+    font-size: 16px;
+  }
 }

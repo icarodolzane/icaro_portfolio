@@ -1,30 +1,89 @@
-'use client'
-import { SectionTitle } from "@/app/components/section-title"
-import { KnownTech as IKnownTech} from "@/app/types/projects"
-import { KnownTech } from "./known-tech"
-import { motion } from "framer-motion"
+"use client";
+import { SectionTitle } from "@/app/components/section-title";
+import { KnownTech as IKnownTech } from "@/app/types/projects";
+import { KnownTech } from "./known-tech";
+import { motion } from "framer-motion";
+import { HorizontalDivider } from "@/app/components/divider/horizontal";
+import { useContext } from "react";
+import context from "@/app/Context/ThemeContext";
+import { ThemeContextType } from "@/app/Context/IContext";
 type KnownTechProps = {
-  techs: IKnownTech[]
-}
+  techs: IKnownTech[];
+};
 
-export const KnownTechs = ({techs}: KnownTechProps) => {
+
+const techIcons = [
+  {
+    id:1,
+    image: "https://svgur.com/i/xVm.svg",
+    
+  },
+
+  {
+    id:2,
+    image: "https://svgur.com/i/xWw.svg"
+  },
+
+  {
+    id:3,
+    image: "https://svgur.com/i/xVn.svg"
+  },
+  {
+    id:4,
+    image: "https://svgur.com/i/xWc.svg"
+  },
+  {
+    id:5,
+    image: "https://svgur.com/i/xWQ.svg"
+  },
+  {
+    id:6,
+    image: "https://svgur.com/i/xWR.svg"
+  },
+
+];
+
+export const KnownTechs = ({ techs }: KnownTechProps) => {
+  const { theme } = useContext<ThemeContextType>(context);
+  const bgColorClass = theme ? "bg-[#374250]" : "bg-white";
+  const textColorClass = theme ?  "text-white" : "text-gray-900";
   return (
-    <section className="container py-16">
-      <SectionTitle title="Conhecimentos" subtitle="competências"/>
-      <div className="w-full grid grid-cols-[repeat(auto-fit,minmax(264px,1fr))] gap-3 mt-[60px]">
-        {
-          techs?.map((tech, i) => (
+   
+    <section id="skills" className={`overflow-x-hidden ${bgColorClass}`}>
+        <HorizontalDivider />
+        <SectionTitle
+          title="Conhecimentos"
+          subtitle="competências"
+          className={`ml-6 sm:ml-32 ${textColorClass}`}
+        />
+        <div className="w-[95%] ml-3 pl-2 px-3 sm:ml-4 sm:pl-12  grid grid-cols-[repeat(auto-fit,minmax(264px,1fr))] ">
+          {techs?.slice(0, 3).map((tech, i) => (
             <motion.div
-              initial={{opacity: 0, x: -100}}
-              whileInView={{opacity: 1, x: 0}}
-              exit={{opacity: 0, x: -100}}
-              transition={{duration: 0.15, delay: i * 0.1}}
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.10, delay: i * 0.1 }}
             >
-              <KnownTech key={tech.name} tech={tech}/>
+             
+              <KnownTech key={tech.name}  tech={tech} />
             </motion.div>
-          ))
-        }
-      </div>
-    </section>
-  )
-}
+          ))}
+        </div>
+
+        <div className=" w-[95%] ml-3 pl-2 px-3  sm:pl-12  grid grid-cols-[repeat(auto-fit,minmax(264px,1fr))]  ">
+
+          {techs?.slice(3, 99).map((tech, i) => (
+            <motion.div
+              initial={{ opacity: 0, x: -100 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              exit={{ opacity: 0, x: -100 }}
+              transition={{ duration: 0.15, delay: i * 0.1 }}
+            >
+              <KnownTech key={tech.name} tech={tech} />
+            </motion.div>
+          ))}
+        </div>
+      </section>
+  
+  );
+};

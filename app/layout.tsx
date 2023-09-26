@@ -6,6 +6,8 @@ import { ContactForm } from './components/contact-form'
 import { Footer } from './components/footer'
 import { BackToTop } from './components/back-to-top'
 import { Toaster } from './components/toaster'
+import AgentsProvider from "./Context/Provider";
+import {ToggleBtn } from './components/toggle-btn';
 
 export const metadata = {
   title: {
@@ -32,14 +34,17 @@ const plexMono = IBM_Plex_Mono({
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
+    
     <html lang="pt-BR" className={`${inter.variable} ${plexMono.variable}`}>
       <body>
+    <AgentsProvider>        
         <BackToTop />
         <Header />
+        <ToggleBtn />
         {children}
-        <ContactForm />
         <Toaster />
         <Footer />
+    </AgentsProvider>        
       </body>
     </html>
   )
