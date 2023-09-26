@@ -21,7 +21,7 @@ export const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
   const textColorClass = theme ?  "text-white" : "text-black";
   const borderClass = theme ? "border-[#374250]" : "border-white"
   return (
-    <div className={` ${bgColorClass} border ${borderClass}`}>
+    <div className={` ${bgColorClass}  ${borderClass} border`}>
       <HorizontalDivider />
       <div className=" py-16 flex flex-row justify-center items-center">
         <section

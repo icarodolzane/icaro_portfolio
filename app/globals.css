@@ -58,6 +58,31 @@
 
 
 
+.bg-custom {
+  background-color: #374250;
+}
+
+.bg-white-custom {
+  background-color: white;
+}
+
+.border-custom {
+  border: 1px solid #374250;
+}
+
+.border-white-custom {
+  border: 1px solid white;
+}
+
+.text-white-custom {
+  color: white;
+}
+
+.text-black-custom {
+  color: black;
+}
+
+
 @media screen and (max-width: 768px) {
   .hidding {margin-right: 1rem;}
 
