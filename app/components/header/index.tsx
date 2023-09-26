@@ -6,6 +6,7 @@ import { motion } from "framer-motion"
 import { useContext, useState } from "react"
 import context from '@/app/Context/ThemeContext'
 import { ThemeContextType } from "@/app/Context/IContext"
+import logo from "@/public/images/MainLogo.svg"
 
 
 const NAV_ITEMS = [
@@ -53,7 +54,7 @@ export const Header = () => {
       <div className="container flex items-center sm:justify-start justify-center gap-4 sm:gap-1 sm:ml-[5rem] small-font-fold">
         <Link href="/">
           <Image className="hidding"
-            src="/images/Mainlogo.svg"
+            src={logo}
             alt="icaro-logo"
             width={22.94}
             height={27.33} />
