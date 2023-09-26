@@ -10,6 +10,9 @@ import { motion } from "framer-motion";
 import axios from "axios";
 import { toast } from "react-hot-toast";
 import { fadeUpAnimation } from "@/app/lib/animations";
+import { useContext } from "react";
+import context from "@/app/Context/ThemeContext";
+import { ThemeContextType } from "@/app/Context/IContext";
 
 const contactFormSchema = z.object({
   name: z.string().min(3).max(100),
@@ -20,6 +23,12 @@ const contactFormSchema = z.object({
 type ContactFormData = z.infer<typeof contactFormSchema>;
 
 export const ContactForm = () => {
+
+  const { theme } = useContext<ThemeContextType>(context);
+
+  
+  const bgColorClass = theme ? "bg-[#374250]" : "bg-white";
+  const textColorClass = theme ?  "text-white" : "text-black";
   const {
     handleSubmit,
     register,
@@ -41,7 +50,7 @@ export const ContactForm = () => {
 
   return (
     <section
-      className="py-16 px-6 md:py-32  items-center justify-center flex flex-col "
+    className={`py-16 px-6 md:py-32 items-center justify-center flex flex-col ${bgColorClass}`}
       id="contact"
     >
       {/* <SectionTitle
@@ -49,11 +58,12 @@ export const ContactForm = () => {
           title="Converse comigo e compartilhe suas ideias, perguntas ou projetos emocionantes. Estou pronto para colaborar e tornar suas aspirações realidade!"
           className="items-center text-center text-gray-600"
         /> */}
-       <motion.div className="
+       <motion.div
+      className={`
         w-21.25rem
         h-4.5rem
         flex-shrink-0
-        text-black
+        ${textColorClass}
         text-center
         font-montserrat
         text-3xl
@@ -62,8 +72,9 @@ export const ContactForm = () => {
         leading-4.5rem
         tracking-tighter
         mb-4
-        sm:mt-4   
-      " 
+        sm:mt-4
+      `}
+    
        initial={{opacity: 0, scale: 0.3}}
       animate={{opacity: 1, scale: 1}}
       transition={{duration: 0.5}}>
