@@ -7,6 +7,9 @@ import { motion } from "framer-motion"
 export const ToggleBtn = () => {
   const { theme, setTheme } = useContext<ThemeContextType>(context);
 
+  const border1 = theme ? "border-black" : "bg-white";
+
+
   const toggleButton = () => {
     const newTheme = !theme;
     setTheme(newTheme);
@@ -22,15 +25,18 @@ export const ToggleBtn = () => {
 
   return (
     <motion.div
+  
     initial={{ top: -100 }}
-    animate={{ top: 0 }}
-    transition={{ duration: 0.5 }}
+    animate={{ top: 8 }}
+    transition={{ duration: 0.7 }}
+    
       className={`mt-12 h-10 flex items-end justify-end pb-1 ${
         theme ? "bg-[#374250]" : "bg-white"
       }`}
     >
       <label className="relative inline-flex items-center mr-5 cursor-pointer">
-        <input
+        <motion.input
+        
           type="checkbox"
           value=""
           className="sr-only peer"
