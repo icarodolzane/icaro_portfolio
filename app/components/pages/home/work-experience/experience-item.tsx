@@ -17,7 +17,8 @@ type ExperienceItemProps = {
 
 export const ExperienceItem = ({experience}: ExperienceItemProps) => {
   const { theme } = useContext<ThemeContextType>(context);
-  const textColorClass = theme ? "text-white" :  "text-gray-600" ;
+  const textColorClass = theme ? "text-white" :  "text-gray-700" ;
+  const titles = theme ? "text-white" :  "text-black" ;
   const ColorCol = theme ? "bg-white" :  "bg-gray-500" ;
   const {
     endDate,
@@ -77,7 +78,7 @@ export const ExperienceItem = ({experience}: ExperienceItemProps) => {
         <a
         href={companyUrl}
         target="_blank"
-        className={`hover:bg-purple-700 transition-colors ${textColorClass}`}
+        className={`hover:bg-purple-700 transition-colors ${titles}`}
       >
             {companyName}
           </a>

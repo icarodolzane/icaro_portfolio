@@ -55,7 +55,7 @@ export const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
           className=" pl-2 sm:pl-16 ml-3 pr-1 sm:pr-7 rounded-tl-lg rounded-bl-lg bg-[#7E41CA] h-72 sm:h-52  sm:mt-[-3rem] mt-[-5rem] flex items-center justify-start text-center sm:text-left border "
         >
           <div className="flex justify-center items-start flex-col ">
-            <Link href={"/projects"} className="mb-3 sm:ml-0 ml-4">
+            <Link href={"/projects"} className="mb-3 sm:ml-0 ml-4 font-bold  text-white ">
               Ver Projetos...
              <HiArrowNarrowRight />
             </Link>

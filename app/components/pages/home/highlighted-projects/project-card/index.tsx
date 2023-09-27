@@ -46,7 +46,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             alt={`Thumbnail do projeto ${project.title}`}
             width={320}
             height={604}
-            className=" h-full object-cover rounded-lg w-[80%] sm:w-full"
+            className=" h-full object-cover rounded-lg w-[80%] sm:w-full mb-8"
           />
 
           <motion.h3
@@ -75,7 +75,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
             ))}
           </div>
 
-          <Link href={`/projects/${project.slug}`} className={`${textColorClass} mt-[-1rem]`}>
+          <Link href={`/projects/${project.slug}`} className={`${textColorClass} mt-[-1rem] font-bold  `}>
             Ver projeto
             <HiArrowNarrowRight />
           </Link>
