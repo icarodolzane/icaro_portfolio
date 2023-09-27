@@ -9,6 +9,7 @@ import { CMSIcon } from "@/app/components/cms-icon"
 import { motion } from "framer-motion"
 import { techBadgeAnimation } from "@/app/lib/animations"
 import ProfilePic from "@/public/images/profile-pic.png";
+import ProfilePic2 from "@/public/images/icaroProfile2.jpg";
 import MainLogo from "@/public/images/icons/Logo.png";
 import MainWhiteLogo from "@/public/images/white-main-logo.svg";
 import linkedin from "@/public/images/icons/linkedin-icon.svg";
@@ -133,7 +134,14 @@ export const HeroSection = ({homeInfo}: HomeSectionProps) => {
 
             src={ProfilePic}
             alt="Icaro Dolzane"
-            className=" mt-20 rounded-lg mb-6 lg:mb-0 object-cover" />
+            className="mt-20 rounded-lg mb-6 lg:mb-0 object-cover hidden sm:block" />
+
+
+        <Image
+            src={ProfilePic2}
+            alt="Icaro Dolzane"
+            className="mt-20 rounded-lg mb-6 lg:mb-0 object-cover block sm:hidden"
+          />
         </motion.div>
       </div>
 
