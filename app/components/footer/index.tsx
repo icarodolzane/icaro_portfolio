@@ -76,9 +76,16 @@ export const Footer = () => {
         </div>
         <div className="border border-gray-400 w-[90%]"></div>
         <div className="flex gap-3 my-5">
+          <a href="">
           <Image src={imgSrc1} alt="Instagram" className="w-7" />
+          </a>
+          <a href="https://github.com/icarodolzane" target="_blank">
           <Image src={imgSrc3} alt="github" className="w-7"  />
+          </a>
+          <a href="https://www.linkedin.com/in/icaro-feitosa-dolzane/" target="_blank">
           <Image src={imgSrc2} alt="linkedin" className="w-7"  />
+          </a>
+
         </div>
    
         <span className={`flex items-center gap-1.5 text-xs sm:text-sm font-mono mb-3 ${textColorClass}`}>

@@ -18,6 +18,7 @@ type ExperienceItemProps = {
 export const ExperienceItem = ({experience}: ExperienceItemProps) => {
   const { theme } = useContext<ThemeContextType>(context);
   const textColorClass = theme ? "text-white" :  "text-gray-600" ;
+  const ColorCol = theme ? "bg-white" :  "bg-gray-500" ;
   const {
     endDate,
     companyName,
@@ -67,7 +68,7 @@ export const ExperienceItem = ({experience}: ExperienceItemProps) => {
           />
         </div>
         <div
-          className="h-full w-[1px] bg-gray-800"
+          className={`h-full w-[1px] bg-gray-800 ${ColorCol}`}
         />
       </div>
       {/* conteudo */}
