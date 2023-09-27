@@ -37,7 +37,7 @@ export const PageIntroduction = () => {
       >
         <p className={`${textColorClass} text-center max-w-[640px] my-6 text-sm sm:text-base`}>Aqui você poderá ver alguns projetos de cunho pessoal, prontos ou em andamento, fique à vontade!
         </p>
-        <Link href="/" >
+        <Link className=" bg-[#7E41CA] w-30 h-10 px-2 hover:opacity-75 rounded-md text-white" href="/" >
           <HiArrowNarrowLeft size={20}/>
           Voltar para Home
         </Link>
